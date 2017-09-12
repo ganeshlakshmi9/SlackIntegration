@@ -44,6 +44,17 @@ public class SlackController {
 
     @Autowired
     private WitAPI witAPI;
+
+    // Health Check
+    @RequestMapping(value = "/health", method = RequestMethod.GET)
+    public String healthCheck() {
+        return "<marquee behavior=\"alternate\" scrollamount=\"5\">I...</marquee>\n" +
+                "<marquee behavior=\"alternate\" scrollamount=\"6\">AM...</marquee>\n" +
+                "<marquee behavior=\"alternate\" scrollamount=\"7\">WORKING...</marquee>\n" +
+                "<marquee behavior=\"alternate\" scrollamount=\"8\">FINE!</marquee>\n" +
+                "\n";
+    }
+
     //Slack================================
 
     @RequestMapping(value = "/jira/issue", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE},
