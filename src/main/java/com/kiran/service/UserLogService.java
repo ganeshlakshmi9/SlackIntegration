@@ -6,7 +6,6 @@ import com.kiran.dao.UserLogDao;
 import com.kiran.model.entity.UserLogEntity;
 import com.kiran.translator.UserLogTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * @since 9/5/17
  */
 
-@Component
+
 public class UserLogService {
 
     @Autowired

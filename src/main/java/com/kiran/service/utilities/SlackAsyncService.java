@@ -4,7 +4,6 @@ import com.kiran.controller.dto.SlackDTO.SlackResponseAttachment;
 import com.kiran.controller.dto.UserLogDTO.UserLogDTO;
 import com.kiran.model.response.SlackResponse;
 import com.kiran.service.SlackService;
-import com.kiran.service.UserLogService;
 import com.kiran.service.exception.InvalidMove;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -31,9 +30,6 @@ public class SlackAsyncService {
 
     @Autowired
     private SlackService slackService;
-
-    @Autowired
-    private UserLogService userLogService;
 
     @Async
     public void postMessage(String userName, String text, String responseUrl) {
@@ -70,6 +66,5 @@ public class SlackAsyncService {
         Date date = new Date();
         String timeStamp = dateFormat.format(date);
         UserLogDTO userLogDTO = new UserLogDTO(userName,timeStamp,text);
-        userLogService.createUserLog(userLogDTO);
     }
 }

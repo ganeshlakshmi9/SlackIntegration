@@ -2,7 +2,6 @@ package com.kiran.controller;
 
 import com.kiran.model.response.SlackResponse;
 import com.kiran.service.SlackService;
-import com.kiran.service.UserLogService;
 import com.kiran.service.exception.InvalidMove;
 import com.kiran.service.integration.JiraAPI;
 import com.kiran.service.integration.WitAPI;
@@ -39,8 +38,6 @@ public class SlackController {
     @Autowired
     private JiraAPI jiraAPI;
 
-    @Autowired
-    private UserLogService userLogService;
 
     @Autowired
     private SlackAsyncService slackAsyncService;
